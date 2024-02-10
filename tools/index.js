@@ -5,7 +5,7 @@ function convertToJsonMarkdownTable(reports) {
     markdownTable += "| --- | --- | --- | --- |\n";
 
     reports.forEach((report) => {
-        markdownTable += `| [${report.title}](${report.url}) | ${report.company_name} | ${report.year} | |\n`;
+        markdownTable += `| [${report.title.replace(/\r?\n/g, '')}](${report.url.replace(/\r?\n/g, '')}) | ${report.company_name.replace(/\r?\n/g, '')} | ${report.year.replace(/\r?\n/g, '')} | |\n`;
     });
 
     return markdownTable;
